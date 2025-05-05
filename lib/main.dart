@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:riverpod_state_mgmt_learning/name_screen.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    // This widget enables Riverpod for the entire application
+    ProviderScope(child: const MyApp()),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -15,6 +20,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
+      home: NameScreen(),
     );
   }
 }
